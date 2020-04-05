@@ -11,5 +11,5 @@ export default {
   name: "Home",
 
   components: { PxAssetsTable }
-}
+};
 </script>
