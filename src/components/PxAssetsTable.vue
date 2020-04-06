@@ -24,7 +24,7 @@
             :src="
               `https://static.coincap.io/assets/icons/${a.symbol.toLowerCase()}@2x.png`
             "
-            :alt="a.name"
+            :alt="a.name" class="w-10 h-10"
           />
         </td>
         <td>
