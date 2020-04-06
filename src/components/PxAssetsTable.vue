@@ -31,9 +31,11 @@
           <b>#{{ a.rank }}</b>
         </td>
         <td>{{ a.name }}</td>
-        <td>{{ a.priceUsd }}</td>
-        <td>{{ a.marketCapUsd }}</td>
-        <td>{{ a.changePercent24Hr }}</td>
+        <td>{{ a.priceUsd | dollar }}</td>
+        <td>{{ a.marketCapUsd | dollar }}</td>
+        <td :class="a.changePercent24Hr.includes('-') ? 'text-red-600' : 'text-green-600'">
+          {{ a.changePercent24Hr | percent }}
+        </td>
         <td class="hidden sm:block"></td>
       </tr>
     </tbody>
