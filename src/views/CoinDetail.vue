@@ -52,9 +52,7 @@
         <div class="my-10 sm:mt-0 flex flex-col justify-center text-center">
           <button
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Cambiar
-          </button>
+          >Cambiar</button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -98,13 +96,7 @@
             >
               <slot>Obtener Link</slot>
             </px-button>
-            <a
-              v-else
-              href=""
-              class="hover:underline text-green-600"
-              target="_blank"
-              >{{ market.url }}</a
-            >
+            <a v-else href class="hover:underline text-green-600" target="_blank">{{ market.url }}</a>
           </td>
         </tr>
       </table>
@@ -148,6 +140,12 @@ export default {
         this.history.reduce((a, b) => a + parseFloat(b.priceUsd), 0) /
         this.history.length
       )
+    }
+  },
+
+  watch: {
+    $route() {
+      this.getCoin()
     }
   },
 
